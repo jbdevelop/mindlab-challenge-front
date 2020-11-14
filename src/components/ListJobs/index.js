@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import formatDate from '../../utils/formatDate'
+
 import { List, Item } from './styles'
 
 export default function ListJobs({ data, loading }) {    
@@ -17,7 +19,7 @@ export default function ListJobs({ data, loading }) {
                   <div>{item.location.city} - {item.location.state} - {item.location.country}</div>          
                   <div> 
                     <span>
-                      { item.createdAt } - 
+                      { formatDate(item.createdAt) } - 
                       ({item.compensation.currency}) {item.compensation.amount} {item.compensation.recurrency}
                     </span>
                   </div>     
